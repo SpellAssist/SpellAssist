@@ -8,10 +8,15 @@ version = "0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://github.com/haifengl/smile.git")
+    }
+    mavenLocal()
 }
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("com.github.haifengl:smile-kotlin:3.0.1")
 }
 
 tasks.test {
@@ -19,7 +24,7 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 application {
